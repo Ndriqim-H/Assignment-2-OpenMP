@@ -15,11 +15,13 @@ const int N = 20000;
 void applySequential(double** matrix) {
 
     //Use the formula to fill the matrix
-    for (size_t i = 1; i < N; i++)
-    {
-        for (size_t j = 1; j < N; j++)
-        {
-            matrix[i][j] = fabs(sin(matrix[i - 1][j - 1])) + fabs(sin(matrix[i][j - 1])) + fabs(sin(matrix[i - 1][j])) * 100;
+    for (int i = 1; i < N; i++) {
+        for (int j = 1; j < N; j++) {
+            float term1 = fabs(sin(matrix[i - 1][j - 1]));
+            float term2 = fabs(sin(matrix[i - 1][j]));
+            float term3 = fabs(sin(matrix[i][j - 1]));
+
+            matrix[i][j] = (term1 + term2 + term3) * 100;
         }
     }
     //Print the matrix
@@ -41,11 +43,21 @@ void applyParallel(double** matrix) {
         
         //Use the formula to fill the matrix
         #pragma omp parallel for num_threads(16)
-        for (int i = 1; i < N; i++)
+        /*for (int i = 1; i < N; i++)
         {
             for (size_t j = 1; j < N; j++)
             {
                 matrix[i][j] = fabs(sin(matrix[i - 1][j - 1])) + fabs(sin(matrix[i][j - 1])) + fabs(sin(matrix[i - 1][j])) * 100;
+            }
+        }*/
+
+        for (int i = 1; i < N; i++) {
+            for (int j = 1; j < N; j++) {
+                float term1 = fabs(sin(matrix[i - 1][j - 1]));
+                float term2 = fabs(sin(matrix[i - 1][j]));
+                float term3 = fabs(sin(matrix[i][j - 1]));
+
+                matrix[i][j] = (term1 + term2 + term3) * 100;
             }
         }
     }
@@ -59,7 +71,7 @@ void showResults(double** matrix, int N, int row1, int col1, int row2, int col2,
     cout << "A[" << row3 << "][" << col3 << "]: " << matrix[row3][col3] << endl;
 }
 
-int main123(int argc, char** argv)
+int main(int argc, char** argv)
 {
     // Initialize a matrix
     //double matrix[N][M];
