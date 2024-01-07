@@ -12,7 +12,7 @@ using namespace std;
 const int N = 20000;
 
 
-void applySequential(double** matrix) {
+void applySequential(float** matrix) {
 
     //Use the formula to fill the matrix
     for (int i = 1; i < N; i++) {
@@ -36,7 +36,7 @@ void applySequential(double** matrix) {
 }
 
 
-void applyParallel(double** matrix) {
+void applyParallel(float** matrix) {
 //    omp_set_num_threads(8);
 //#pragma omp parallel
     {
@@ -64,25 +64,25 @@ void applyParallel(double** matrix) {
     
 }
 
-void showResults(double** matrix, int N, int row1, int col1, int row2, int col2, int row3, int col3) {
+void showResults(float** matrix, int N, int row1, int col1, int row2, int col2, int row3, int col3) {
     cout << "Stencil Operation Results for matrix elements:" << endl;
     cout << "A[" << row1 << "][" << col1 << "]: " << matrix[row1][col1] << endl;
     cout << "A[" << row2 << "][" << col2 << "]: " << matrix[row2][col2] << endl;
     cout << "A[" << row3 << "][" << col3 << "]: " << matrix[row3][col3] << endl;
 }
 
-int main(int argc, char** argv)
+int main1(int argc, char** argv)
 {
     // Initialize a matrix
     //double matrix[N][M];
-    double** parallelMatrix = new double* [N];
-    double** sequentialMatrix = new double* [N];
+    float** parallelMatrix = new float* [N];
+    float** sequentialMatrix = new float* [N];
 
 
     for (int i = 0; i < N; i++)
     {
-        sequentialMatrix[i] = new double[N];
-        parallelMatrix[i] = new double[N];
+        sequentialMatrix[i] = new float[N];
+        parallelMatrix[i] = new float[N];
 
         parallelMatrix[i][0] = 150;
         sequentialMatrix[i][0] = 150;

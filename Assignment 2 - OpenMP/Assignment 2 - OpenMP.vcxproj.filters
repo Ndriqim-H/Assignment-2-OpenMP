@@ -18,13 +18,7 @@
     <ClCompile Include="Assignment 2 - OpenMP.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ariana.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Ariana2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Stencil.cpp">

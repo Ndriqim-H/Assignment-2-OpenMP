@@ -128,8 +128,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ariana.cpp" />
-    <ClCompile Include="Ariana2.cpp" />
     <ClCompile Include="Assignment 2 - OpenMP.cpp" />
     <ClCompile Include="Stencil.cpp" />
     <ClCompile Include="Test.cpp" />
