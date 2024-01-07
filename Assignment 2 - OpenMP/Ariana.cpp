@@ -6,8 +6,8 @@ using namespace std;
 
 void showResults(float** matrix, int N, int row1, int col1, int row2, int col2, int row3, int col3);
 
-int main2(int argc, char** argv) {
-    int N = 10000;
+int main12(int argc, char** argv) {
+    int N = 20000;
     float** sequentialMatrix = new float* [N];
     float** parallelMatrix = new float* [N];
 
@@ -55,7 +55,7 @@ int main2(int argc, char** argv) {
 
     // Parallel computation
     startTime = omp_get_wtime();
-#pragma omp parallel for num_threads(4)
+    #pragma omp parallel for num_threads(16)
     for (int idx = 1; idx < N * N; idx++) {
         int i = idx / N;
         int j = idx % N;

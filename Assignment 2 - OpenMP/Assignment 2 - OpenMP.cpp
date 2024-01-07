@@ -35,13 +35,13 @@ void applySequential(double** matrix) {
 
 
 void applyParallel(double** matrix) {
-        
-#pragma omp parallel
+//    omp_set_num_threads(8);
+//#pragma omp parallel
     {
-        omp_set_num_threads(4);
+        
         //Use the formula to fill the matrix
-        #pragma omp parallel for
-        for (size_t i = 1; i < N; i++)
+        #pragma omp parallel for num_threads(16)
+        for (int i = 1; i < N; i++)
         {
             for (size_t j = 1; j < N; j++)
             {
@@ -59,7 +59,7 @@ void showResults(double** matrix, int N, int row1, int col1, int row2, int col2,
     cout << "A[" << row3 << "][" << col3 << "]: " << matrix[row3][col3] << endl;
 }
 
-int main(int argc, char** argv)
+int main123(int argc, char** argv)
 {
     // Initialize a matrix
     //double matrix[N][M];
