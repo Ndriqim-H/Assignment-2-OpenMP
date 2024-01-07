@@ -33,7 +33,7 @@ void showResults(float** matrix, int row1, int col1, int row2, int col2, int row
     cout << "A[" << row3 << "][" << col3 << "]: " << matrix[row3][col3] << endl;
 }
 
-int main(int argc, char** argv) {
+int main1(int argc, char** argv) {
     float** A = new float* [N];
 
     // Perform the stencil operation on the matrix A
