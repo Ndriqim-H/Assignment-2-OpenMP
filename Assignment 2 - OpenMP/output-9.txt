@@ -1,0 +1,59 @@
+Available processors: 64
+Number of threads: 64
+Stencil Operation Results for matrix elements with size: 46080x46080
+=================================
+Execution time for sequential computation: 136.153
+Stencil Operation Results for matrix elements:
+A[4616][27251]: 123.882
+A[18937][32332]: 205.253
+A[21255][8468]: 221.555
+
+Execution time for parallel computation with 1 thread: 122.246
+Stencil Operation Results for matrix elements:
+A[4616][27251]: 123.882 - Ok
+A[18937][32332]: 205.253 - Ok
+A[21255][8468]: 221.555 - Ok
+Speedup: 1.1137598 Ok (>= 0.700000)
+=================================
+Execution time for parallel computation with 2 threads: 59.9614791
+Stencil Operation Results for matrix elements:
+A[4616][27251]: 123.8816605 - Ok
+A[18937][32332]: 205.2533112 - Ok
+A[21255][8468]: 221.5549927 - Ok
+Speedup: 2.2706769 Ok (>= 1.400000)
+=================================
+Execution time for parallel computation with 4 threads: 32.0335560
+Stencil Operation Results for matrix elements:
+A[4616][27251]: 123.8816605 - Ok
+A[18937][32332]: 205.2533112 - Ok
+A[21255][8468]: 221.5549927 - Ok
+Speedup: 4.2503288 Ok (>= 2.800000)
+=================================
+Execution time for parallel computation with 8 threads: 18.9319166
+Stencil Operation Results for matrix elements:
+A[4616][27251]: 123.8816605 - Ok
+A[18937][32332]: 205.2533112 - Ok
+A[21255][8468]: 221.5549927 - Ok
+Speedup: 7.1917255 Ok (>= 5.600000)
+=================================
+Execution time for parallel computation with 16 threads: 9.6238178
+Stencil Operation Results for matrix elements:
+A[4616][27251]: 123.8816605 - Ok
+A[18937][32332]: 205.2533112 - Ok
+A[21255][8468]: 221.5549927 - Ok
+Speedup: 14.1475192 Ok (>= 11.200000)
+=================================
+Execution time for parallel computation with 32 threads: 6.0513807
+Stencil Operation Results for matrix elements:
+A[4616][27251]: 123.8816605 - Ok
+A[18937][32332]: 205.2533112 - Ok
+A[21255][8468]: 221.5549927 - Ok
+Speedup: 22.4995175 Ok (>= 22.400000)
+=================================
+Execution time for parallel computation with 64 threads: 3.9853885
+Stencil Operation Results for matrix elements:
+A[4616][27251]: 123.8816605 - Ok
+A[18937][32332]: 205.2533112 - Ok
+A[21255][8468]: 221.5549927 - Ok
+Speedup: 34.1630798 Not ok (< 44.800000)
+=================================
